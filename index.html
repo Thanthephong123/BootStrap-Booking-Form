@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <h2 class="col-sm-12">
+        <span id="title">Bootstrap Booking Form:</span>
+      </h2>
+      <div class="col-sm-12">
+        <div class="well">Fill out the form and click the submit button when complete...</div>
+      </div>
+      <div class="col-sm-6 content-left">
+
+        <div class="panel panel-primary first-panel ">
+          <div class="panel-heading">User:</div>
+          <div class="panel-body">
+            <form class="form-horizontal" action="/action_page.php">
+              <div class="form-group removeMargin">
+                <label class="control-label col-sm-3" for="email">Username:</label>
+                <div id="username_box" class="col-sm-8 col-sm-offset-1">
+                  <input id="username_inp" class="form-control" placeholder="Type username...">
+                </div>
+              </div>
+              <div class="form-group removeMargin">
+                <label class="control-label col-sm-3" for="pwd">First Name:</label>
+                <div id="firstname_box" class="col-sm-8 col-sm-offset-1">
+                  <input id="firstname_inp" class="form-control" placeholder="Type first name...">
+                </div>
+              </div>
+              <div class="form-group removeMargin">
+                <label class="control-label col-sm-3" for="pwd">Last Name:</label>
+                <div id="lastname_box" class="col-sm-8 col-sm-offset-1">
+                  <input id="lastname_inp" class="form-control" placeholder="Type last name...">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="panel panel-primary first-panel">
+          <div class="panel-heading">Contact:</div>
+          <div class="panel-body second-panel">
+            <form action="/action_page.php">
+              <div id="phone_box" class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
+                <input id="phone_inp" type="tel" class="form-control" placeholder="Type phone#...">
+              </div>
+              <div id="fax_box" class="input-group">
+                <span class="input-group-addon"><i class="fa fa-fax fa-fw"></i></span>
+                <input id="fax_inp" class="form-control" placeholder="Type fax#...">
+              </div>
+              <div id="email_box" class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+                <input id="email_inp" class="form-control" placeholder="Type e-mail#...">
+              </div>
+            </form>
+          </div>
+
+
+        </div>
+        <div class="panel panel-primary third-panel">
+          <div class="panel-heading">Schedule:</div>
+          <div class="panel-body third-panel">
+            <form action="/action_page.php">
+              <div class="form-group">
+                <label >Adults:</label>
+                <select id="numAdults" class="form-control">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+              </div>
+              <div style="padding-left: 0; " class="form-group col-sm-6">
+                <label>Check-In:</label>
+                <br>
+                <input id="checkIn" class="form-control" type="date"/>
+              </div>
+              <div style="padding-right: 0" class="form-group col-sm-6">
+                <label>Check-Out:</label>
+                <br>
+                <input id="checkOut" class="form-control" type="date"/>
+              </div>
+
+              <div style="padding-left: 0" class="col-sm-6">
+                <label>Days:</label>
+                <br>
+                <input id="displayDays" class="form-control" value="Displays days..." readonly/>
+              </div>
+              <div style="padding-right: 0" class="form-group col-sm-6">
+                <label>Cost($):</label>
+                <br>
+                <input id="displayCost" class="form-control" value="Displays cost..." readonly/>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-sm-6 content-right">
+        <div class="panel panel-primary right-panel">
+          <div class="panel-heading">Other:</div>
+          <div class="panel-body third-panel">
+            <form action="/action_page.php">
+              <div class="form-group">
+                <label>Message:</label>
+                <textarea id="message_inp" class="form-control" rows="23" placeholder="Type message here..."></textarea>
+              </div>
+              <div class="form-group">
+                <label>Range: </label>
+                <input type="range" min="0" max="10" />
+              </div>
+              <div class="form-group">
+                <label>Priority: </label>
+                <br>
+                <label class="radio-inline"><input type="radio" name="radio" checked>Low</label>
+                <label class="radio-inline"><input type="radio" name="radio">Med</label>
+                <label class="radio-inline"><input type="radio" name="radio">High</label>
+              </div> 
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-8"></div>
+      <div class="col-sm-2" >
+        <button id="resetButton" style="width:100%" type="button" class="btn btn-primary">
+          <i class="fa fa-eraser" aria-hidden="true"></i>
+          Reset
+        </button>
+      </div>
+      <div class="col-sm-2">
+        <button id="submitButton" style="width:100%" type="button" class="btn btn-success">
+          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          Submit
+        </button>
+      </div>
+      </div>
+  
+    </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
